@@ -116,7 +116,7 @@ function mostrarEscena() {
   dibujarViewport(xmin, ymin, xmax, ymax);
     let linea = lineas[escena];
 
-    dibujarLinea(linea.x1, linea.y1, linea.x2, linea.y2,"gary");
+    dibujarLinea(linea.x1, linea.y1, linea.x2, linea.y2,"gray");
 
     let recorte = recortarLinea(linea.x1, linea.y1, linea.x2, linea.y2);
     if (recorte) {
