@@ -103,8 +103,13 @@ function recortarLinea(x1, y1, x2, y2) {
                 y1 = y;
                 codigo1 = calcularCodigo(x1, y1);
             }
+                else {
+                x2 = x;
+                y2 = y;
+                codigo2 = calcularCodigo(x2, y2);
         }
         } 
+    }
     if (aceptada) {
         return {x1, y1, x2, y2};
     }
@@ -132,7 +137,7 @@ function siguienteEscena() {
   mostrarEscena();
 }
 
-function escenaAnterior() {
+function anteriorEscena() {
   escena --;    
     if (escena < 0) {
         escena = lineas.length - 1;
