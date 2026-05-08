@@ -22,3 +22,16 @@ const lineas = [
   {x1:50, y1:50, x2:150, y2:100}
 ];
 
+let escena = 0;
+
+function convertirY(y) {
+  return canvas.height - y;
+}
+
+function dibujarViewport() {
+  ctx.strokeStyle = "blue";
+  ctx.lineWidth = 2;
+  ctx.strokeRect(xmin, convertirY(ymax), xmax - xmin, ymax - ymin);
+}
+
+
