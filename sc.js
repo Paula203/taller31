@@ -28,7 +28,7 @@ function convertirY(y) {
   return canvas.height - y;
 }
 
-function dibujarViewport() {
+function dibujarViewport(xmin, ymin, xmax, ymax) {
   ctx.strokeStyle = "blue";
   ctx.lineWidth = 2;
   ctx.strokeRect(xmin, convertirY(ymax), xmax - xmin, ymax - ymin);
@@ -110,3 +110,11 @@ function recortarLinea(x1, y1, x2, y2) {
     }
     return null; 
     }
+
+function mostrarEscena() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  dibujarViewport(xmin, ymin, xmax, ymax);
+    let linea = lineas[escena];
+
+    dibujarLinea(linea.x1, linea.y1, linea.x2, linea.y2,"gary");
+}
