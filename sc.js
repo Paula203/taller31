@@ -1,8 +1,12 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-let xmin = 200;
-let xmax = 150;
-let ymin = 500;
-let ymax = 350;
+function actualizarViewport() {
+  xmin = Number(document.getElementById("xmin").value);
+  xmax = Number(document.getElementById("xmax").value);
+  ymin = Number(document.getElementById("ymin").value);
+  ymax = Number(document.getElementById("ymax").value);
+  mostrarEscena();
+}
+
 
