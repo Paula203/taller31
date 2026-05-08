@@ -117,4 +117,9 @@ function mostrarEscena() {
     let linea = lineas[escena];
 
     dibujarLinea(linea.x1, linea.y1, linea.x2, linea.y2,"gary");
+
+    let recorte = recortarLinea(linea.x1, linea.y1, linea.x2, linea.y2);
+    if (recorte) {
+        dibujarLinea(recorte.x1, recorte.y1, recorte.x2, recorte.y2,"red");
+    }
 }
