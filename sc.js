@@ -65,3 +65,48 @@ function calcularCodigo(x, y) {
     }
     return codigo;
 }
+
+function recortarLinea(x1, y1, x2, y2) {
+    let codigo1 = calcularCodigo(x1, y1);
+    let codigo2 = calcularCodigo(x2, y2);
+    let aceptada = false;
+    while (true) {
+        if ((codigo1 | codigo2) === 0) {
+            aceptada = true;
+            break;
+        }
+         else if ((codigo1 & codigo2) !== 0) {
+            break;
+        } else {
+            let codigoFuera;
+            let x, y;
+            if (codigo1 !== 0) {
+                codigoFuera = codigo1;
+            } else {
+                codigoFuera = codigo2;
+            }
+            if (codigoFuera & TOP) {
+                x = x1 + (x2 - x1) * (ymax - y1) / (y2 - y1);
+                y = ymax;
+            } else if (codigoFuera & BOTTOM){
+                x = x1 + (x2 - x1) * (ymin - y1) / (y2 - y1);
+                y = ymin;
+            } else if (codigoFuera & RIGHT) {
+                y = y1 + (y2 - y1) * (xmax - x1) / (x2 - x1);
+                x = xmax;
+            } else if (codigoFuera & LEFT) {
+                y = y1 + (y2 - y1) * (xmin - x1) / (x2 - x1);
+                x = xmin;
+            }   
+            if (codigoFuera === codigo1) {
+                x1 = x;
+                y1 = y;
+                codigo1 = calcularCodigo(x1, y1);
+            }
+        }
+        } 
+    if (aceptada) {
+        return {x1, y1, x2, y2};
+    }
+    return null; 
+    }
