@@ -34,4 +34,13 @@ function dibujarViewport() {
   ctx.strokeRect(xmin, convertirY(ymax), xmax - xmin, ymax - ymin);
 }
 
+function dibujarLinea(x1, y1, x2, y2,color) {
+    ctx.beginPath();
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 2;
 
+  ctx.moveTo(x1, convertirY(y1));
+  ctx.lineTo(x2, convertirY(y2));
+
+  ctx.stroke();
+}
