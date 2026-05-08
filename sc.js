@@ -29,7 +29,7 @@ function convertirY(y) {
 }
 
 function dibujarViewport(xmin, ymin, xmax, ymax) {
-  ctx.strokeStyle = "blue";
+  ctx.strokeStyle = "purple";
   ctx.lineWidth = 2;
   ctx.strokeRect(xmin, convertirY(ymax), xmax - xmin, ymax - ymin);
 }
