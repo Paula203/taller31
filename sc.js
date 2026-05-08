@@ -44,3 +44,24 @@ function dibujarLinea(x1, y1, x2, y2,color) {
 
   ctx.stroke();
 }
+
+const INSIDE = 0;
+const LEFT = 1;
+const RIGHT = 2;
+const BOTTOM = 4;
+const TOP= 8;
+
+function calcularCodigo(x, y) { 
+    let codigo = INSIDE;    
+    if (x < xmin) {
+        codigo |= LEFT;
+    } else if (x > xmax) {
+        codigo |= RIGHT;
+    }
+    if (y < ymin) {
+        codigo |= BOTTOM;
+    } else if (y > ymax) {
+        codigo |= TOP;
+    }
+    return codigo;
+}
