@@ -131,3 +131,12 @@ function siguienteEscena() {
   }
   mostrarEscena();
 }
+
+function escenaAnterior() {
+  escena --;    
+    if (escena < 0) {
+        escena = lineas.length - 1;
+    }
+    mostrarEscena();
+}
+mostrarEscena();
