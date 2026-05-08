@@ -123,3 +123,11 @@ function mostrarEscena() {
         dibujarLinea(recorte.x1, recorte.y1, recorte.x2, recorte.y2,"red");
     }
 }
+
+function siguienteEscena() {
+  escena ++;
+  if (escena >= lineas.length) {
+    escena = 0;
+  }
+  mostrarEscena();
+}
